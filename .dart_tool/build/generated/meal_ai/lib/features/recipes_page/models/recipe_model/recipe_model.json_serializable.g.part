@@ -1,0 +1,58 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_RecipeModel _$$_RecipeModelFromJson(Map<String, dynamic> json) =>
+    _$_RecipeModel(
+      key: json['key'],
+      host: json['host'] as String,
+      title: json['title'] as String,
+      total_time: json['total_time'] as int,
+      image: json['image'] as String,
+      ingredients: (json['ingredients'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      instructions: json['instructions'] as String,
+      nutrients: Nutrients.fromJson(json['nutrients'] as Map<String, dynamic>),
+      servings: json['servings'] as String,
+      addTime: json['addTime'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$_RecipeModelToJson(_$_RecipeModel instance) =>
+    <String, dynamic>{
+      'key': instance.key,
+      'host': instance.host,
+      'title': instance.title,
+      'total_time': instance.total_time,
+      'image': instance.image,
+      'ingredients': instance.ingredients,
+      'instructions': instance.instructions,
+      'nutrients': instance.nutrients,
+      'servings': instance.servings,
+      'addTime': instance.addTime,
+    };
+
+_$_Nutrients _$$_NutrientsFromJson(Map<String, dynamic> json) => _$_Nutrients(
+      calories: json['calories'] as String?,
+      carbohydrateContent: json['carbohydrateContent'] as String?,
+      proteinContent: json['proteinContent'] as String?,
+      fatContent: json['fatContent'] as String?,
+      saturatedFatContent: json['saturatedFatContent'] as String?,
+      sodiumContent: json['sodiumContent'] as String?,
+      fiberContent: json['fiberContent'] as String?,
+      sugarContent: json['sugarContent'] as String?,
+      servingSize: json['servingSize'] as String?,
+    );
+
+Map<String, dynamic> _$$_NutrientsToJson(_$_Nutrients instance) =>
+    <String, dynamic>{
+      'calories': instance.calories,
+      'carbohydrateContent': instance.carbohydrateContent,
+      'proteinContent': instance.proteinContent,
+      'fatContent': instance.fatContent,
+      'saturatedFatContent': instance.saturatedFatContent,
+      'sodiumContent': instance.sodiumContent,
+      'fiberContent': instance.fiberContent,
+      'sugarContent': instance.sugarContent,
+      'servingSize': instance.servingSize,
+    };
